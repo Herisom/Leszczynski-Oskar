@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .card,
+.dark-mode .game-card,
+.dark-mode .stats-card,
+.dark-mode .info-card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark-mode .search-input {
+  background-color: #2d2d2d;
+  color: #fff;
+  border-color: #444;
+}
+
+.dark-mode .footer {
+  background-color: #0a0a0a;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: white;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.header-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.color-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.color-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mode-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.login-btn {
+  background: #4a6fa5;
+  color: white;
+}
+
+.logout-btn {
+  background: #ff6b6b;
+  color: white;
+}
+
+.fact-btn {
+  background: #20b2aa;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eaeaea;
+}
+
+.user-card {
+  text-align: center;
+}
+
+.user-greeting h3 {
+  color: #4a6fa5;
+  margin-bottom: 0.5rem;
+}
+
+.user-login h3 {
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.user-login small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #888;
+}
+
+.fact-card .fact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.fact-text {
+  font-size: 1.1rem;
+  color: #555;
+  font-style: italic;
+}
+
+.dark-mode .fact-text {
+  color: #bbb;
+}
+
+.search-section {
+  margin: 2rem 0;
+}
+
+.search-section h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.dark-mode .search-section h2 {
+  color: #fff;
+}
+
+.search-box {
+  position: relative;
+  max-width: 500px;
+  margin: 1rem 0;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 2.5rem;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4a6fa5;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+
+.clear-btn:hover {
+  color: #ff6b6b;
+}
+
+.results-count {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.game-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #4a6fa5;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.game-header h4 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+.dark-mode .game-header h4 {
+  color: #fff;
+}
+
+.game-year {
+  background: #eef5ff;
+  color: #4a6fa5;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.game-genre {
+  display: inline-block;
+  background: #4a6fa5;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.game-desc {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .game-desc {
+  color: #bbb;
+}
+
+.game-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #888;
+}
+
+.stars {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.no-games {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+.dark-mode .no-games {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}
+
+.main-content {
+  grid-column: 1;
+}
+
+.sidebar {
+  grid-column: 2;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    grid-column: 1;
+  }
+}
+
+.stats-list {
+  list-style: none;
+}
+
+.stats-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats-list li:last-child {
+  border-bottom: none;
+}
+
+.dark-mode .stats-list li {
+  border-bottom-color: #333;
+}
+
+.portal-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.portal-tags span {
+  background: #eef5ff;
+  color: #4a6fa5;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.dark-mode .portal-tags span {
+  background: #2d3748;
+  color: #a0aec0;
+}
+
+.footer {
+  background: #2d3748;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+.footer-content p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
