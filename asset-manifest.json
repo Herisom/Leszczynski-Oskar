@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Leszczynski-Oskar/static/css/main.6e1c1929.css",
+    "main.js": "/Leszczynski-Oskar/static/js/main.abb036ff.js",
+    "index.html": "/Leszczynski-Oskar/index.html",
+    "main.6e1c1929.css.map": "/Leszczynski-Oskar/static/css/main.6e1c1929.css.map",
+    "main.abb036ff.js.map": "/Leszczynski-Oskar/static/js/main.abb036ff.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e1c1929.css",
+    "static/js/main.abb036ff.js"
+  ]
+}
